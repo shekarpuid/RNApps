@@ -33,9 +33,15 @@ const Todo = (props) => {
     }, [])
 
     const removeTodo = () => {
-        Animated.timing(opacity, {
-            toValue: 0, duration: 500, useNativeDriver: true
-        }).start(() => {
+        Animated.sequence([
+            Animated.timing(zoom2, {
+                toValue: 0, duration: 500, useNativeDriver: true
+            }),
+            Animated.delay(200),
+            Animated.timing(opacity, {
+                toValue: 0, duration: 500, useNativeDriver: true
+            })
+        ]).start(() => {
             deleteTodo(item.id)
         })
     }
