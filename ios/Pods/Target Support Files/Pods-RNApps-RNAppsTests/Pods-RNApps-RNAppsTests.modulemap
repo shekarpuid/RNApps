@@ -1,0 +1,6 @@
+module Pods_RNApps_RNAppsTests {
+  umbrella header "Pods-RNApps-RNAppsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
