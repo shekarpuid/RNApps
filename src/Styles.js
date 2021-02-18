@@ -4,8 +4,8 @@ const styles = StyleSheet.create({
     flex1: {flex: 1},
     vhCenter: {justifyContent: 'center', alignItems: 'center'},
     heading: {fontSize: 24, fontWeight: 'bold', marginBottom: 20},
-    shadow: {shadowColor: '#aaa', shadowOffset: {width: 2, height: 5}, shadowOpacity: 0.25, 
-    shadowRadius: 8, elevation: 5},
+    shadow: {shadowColor: '#aaa', shadowOffset: {width: 2, height: 5}, shadowOpacity: 0.25, shadowRadius: 8, elevation: 5},
+    mb15: {marginBottom: 15},
     
     // Todo styles
     todoWrapper: {padding: 20},
