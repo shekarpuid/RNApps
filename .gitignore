@@ -57,3 +57,11 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+node_modules/react-native-shared-element/android/build/generated/source/buildConfig/debug/com/ijzerenhein/sharedelement/BuildConfig.java
+node_modules/react-native-shared-element/android/build/generated/source/buildConfig/debug/com/ijzerenhein/sharedelement/BuildConfig.java
+node_modules/react-native-shared-element/android/build/generated/source/buildConfig/debug/com/ijzerenhein/sharedelement/BuildConfig.java
+node_modules/react-native-shared-element/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+node_modules/react-native-shared-element/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+node_modules/react-native-shared-element/android/build/intermediates/incremental/packageDebugResources/compile-file-map.properties
+*.xml
+node_modules/react-native-shared-element/android/build/intermediates/incremental/packageDebugAssets/merger.xml

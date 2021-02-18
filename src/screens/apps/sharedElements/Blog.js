@@ -35,7 +35,8 @@ const Blog = (props) => {
     return (
         <>
             <View>
-                <FlatList numColumns={2}
+                <Text style={[styles.heading, {marginTop: 15, alignSelf: 'center', color: '#000'}]}>Blog Posts</Text>
+                <FlatList numColumns={2} contentContainerStyle={{paddingBottom: 80}}
                     data={items} keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => {
                         return renderItem(item)
