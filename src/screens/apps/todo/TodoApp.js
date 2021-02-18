@@ -9,6 +9,7 @@ const Todo = (props) => {
     const { item, editTodo, deleteTodo } = props
     const opacity = useRef(new Animated.Value(0)).current
     const zoom = useRef(new Animated.Value(0)).current
+    const zoom2 = useRef(new Animated.Value(0)).current
     const animated = useRef(new Animated.Value(0)).current
     const ANIMATION_DURATION = 1000
     // Ref: https://github.com/spencercarli/animated-react-native-flatlist-demo/blob/master/App.js
@@ -19,11 +20,12 @@ const Todo = (props) => {
             toValue: 1, duration: 500, useNativeDriver: true
         }).start()
         // Icons zoom
-        if (!complete) {
-            Animated.timing(zoom, {
-                toValue: 1, duration: 500, useNativeDriver: true
-            }).start()
-        }
+        Animated.timing(zoom, {
+            toValue: 1, duration: 500, useNativeDriver: true
+        }).start()
+        Animated.timing(zoom2, {
+            toValue: 1, duration: 500, useNativeDriver: true
+        }).start()
         // Animated.timing(animated, {
         //     toValue: 1,
         //     duration: ANIMATION_DURATION, useNativeDriver: true
@@ -87,23 +89,33 @@ const Todo = (props) => {
             <View style={styles.todoRight}>
                 {!complete &&
                     <TouchableOpacity onPress={() => editTodo(item)}
-                        style={
-                            {
-                                opacity: zoom,
-                                transform: [
-                                    {
-                                        scale: zoom.interpolate({
-                                            inputRange: [0, 1],
-                                            outputRange: [0, 1]
-                                        })
-                                    }
-                                ]
-                            }
-                        }
+                        style={{
+                            opacity: zoom,
+                            transform: [
+                                {
+                                    scale: zoom.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [0, 1]
+                                    })
+                                }
+                            ]
+                        }}
                     >
                         <EvilIcons name="pencil" size={25} color='#000' />
                     </TouchableOpacity>}
-                <TouchableOpacity onPress={() => removeTodo()}>
+                <TouchableOpacity onPress={() => removeTodo()}
+                    style={{
+                        opacity: zoom2,
+                        transform: [
+                            {
+                                scale: zoom2.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [0, 1]
+                                })
+                            }
+                        ]
+                    }}
+                >
                     <EvilIcons name="trash" size={25} color='#000' />
                 </TouchableOpacity>
             </View>
@@ -161,7 +173,7 @@ const TodoApp = () => {
             <View style={styles.todoWrapper}>
                 <View style={styles.todoTop}>
                     <Text style={styles.heading}>Today's tasks</Text>
-                    {todoList.length === 0 && <Text style={{color: 'red'}}>You don't have todos right now!!</Text>}
+                    {todoList.length === 0 && <Text style={{ color: 'red' }}>You don't have todos right now!!</Text>}
                     <FlatList
                         data={todoList}
                         keyExtractor={item => item.id.toString()}
