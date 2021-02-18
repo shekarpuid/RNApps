@@ -193,22 +193,22 @@ const TodoApp = () => {
                         bounces={false}
                     />
                 </View>
-                <View style={styles.todoBottom}>
-                    <TextInput
-                        onChangeText={text => setValue(text)}
-                        value={value}
-                        placeholder='add todo' placeholderTextColor='#aaa'
-                        style={styles.todoInput}
-                    />
-                    {editing ?
-                        <TouchableOpacity style={styles.addTodoBtn} onPress={() => updateTodo()}>
-                            <EvilIcons name="like" size={30} color='#000' style={{ alignSelf: 'flex-end' }} />
-                        </TouchableOpacity> :
-                        <TouchableOpacity style={styles.addTodoBtn} onPress={() => addTodo()}>
-                            <EvilIcons name="plus" size={30} color='#000' style={{ alignSelf: 'flex-end' }} />
-                        </TouchableOpacity>
-                    }
-                </View>
+            </View>
+            <View style={styles.todoBottom}>
+                <TextInput
+                    onChangeText={text => setValue(text)}
+                    value={value}
+                    placeholder='add todo' placeholderTextColor='#aaa'
+                    style={styles.todoInput}
+                />
+                {editing ?
+                    <TouchableOpacity style={styles.addTodoBtn} onPress={() => updateTodo()}>
+                        <EvilIcons name="like" size={30} color='#000' style={{ alignSelf: 'flex-end' }} />
+                    </TouchableOpacity> :
+                    <TouchableOpacity style={styles.addTodoBtn} onPress={() => addTodo()}>
+                        <EvilIcons name="plus" size={30} color='#000' style={{ alignSelf: 'flex-end' }} />
+                    </TouchableOpacity>
+                }
             </View>
         </>
     )
