@@ -23,7 +23,7 @@ const HomeStackNavigator = ({ navigation }) => (
     </HomeStack.Navigator>
 )
 const BlogStackNavigator = ({ navigation }) => (
-    <BlogStack.Navigator initialRouteName="Blog">
+    <BlogStack.Navigator initialRouteName="Blog" screenOptions={{ headerShown: false }} mode='modal'>
         <BlogStack.Screen name="Blog" component={Blog} />
         <BlogStack.Screen name="BlogDetail" component={BlogDetail} 
             sharedElementsConfig={(route, otherRoute, showing) => {
