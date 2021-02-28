@@ -28,6 +28,13 @@ const styles = StyleSheet.create({
     },
     addTodoBtn: { width: 40, alignSelf: 'center' },
 
+    // Animated FlatList
+    faBox: {width: '100%', borderRadius: 8, backgroundColor: '#fff',marginBottom: 20,
+        shadowColor: 'rgba(0,0,0,1)', shadowOffset: { width: 0, height: 7 }, shadowOpacity: 0.25,
+        shadowRadius: 7, elevation: 7
+    },
+    faBoxTitle: {fontSize: 18, fontWeight: 'bold', color: '#000'}
+
 
 
 })

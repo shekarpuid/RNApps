@@ -3,6 +3,10 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
+# Add the pods for the Firebase products you want to use in your app
+# For example, to use Firebase Authentication and Cloud Firestore
+pod 'GoogleSignIn', '~> 5.0.2'
+
 target 'RNApps' do
   config = use_native_modules!
 
